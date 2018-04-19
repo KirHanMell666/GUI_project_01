@@ -21,7 +21,6 @@ class View extends JFrame{
     }
 
     void showLogs(List<Log> data) {
-        setBackground(Color.DARK_GRAY);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         p.setLayout(new FlowLayout());
@@ -46,6 +45,8 @@ class View extends JFrame{
 
     void start() {
         setVisible(true);
+        button.setBackground(Color.darkGray);
+        button.setForeground(Color.red);
     }
 }
 

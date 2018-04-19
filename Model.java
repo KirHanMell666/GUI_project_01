@@ -1,10 +1,12 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 class Model {
-    protected ChildController childCtrl;
-    protected Controller ctrl;
+    ChildController childCtrl;
+    Controller ctrl;
     private List<Log> data;
+    //private List<JLabel> jLabels;
 
     //Model(ChildController logController) {
     //    this.childCtrl = logController;
@@ -16,11 +18,17 @@ class Model {
         this.data = new ArrayList<>();
     }
 
+
     void addData(String s)
     {
         this.data.add(new Log(s));
     }
-
+/*
+    void addJLabel(JLabel j)
+    {
+        this.jLabels.add(j);
+    }
+*/
     void dumpData() {
         //this.data.add(new Log("Cos tam a"));
 /*
