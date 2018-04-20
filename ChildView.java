@@ -6,14 +6,13 @@ import java.util.List;
 
 class ChildView extends JFrame {
 
+    private final ChildController childCtrl;
+
     JTextField tf = new JTextField();
     JPanel p = new JPanel();
     JPanel p2 = new JPanel();
     JScrollPane jsp = new JScrollPane(p);
     JButton bAdd = new JButton("Add Element");
-    JButton button2 = new JButton("odswiez");
-
-    private final ChildController childCtrl;
 
     ChildView(ChildController logChildController) {
         this.childCtrl = logChildController;
@@ -26,39 +25,31 @@ class ChildView extends JFrame {
 
     void showLogs(List<Log> data) {
         setBackground(Color.DARK_GRAY);
+        setTitle("Child Window");
+        setSize(640, 480);
 
         p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
 
         for (Log log : data) {
-
-            //childCtrl.mainLabel.setText(log.toString());
             JLabel jLabel = new JLabel(log.toString());
             p.add(jLabel);
         }
 
         bAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                childCtrl.useButtonTextField(bAdd,tf);
-            }
-        });
-
-        button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                repaint();
-                validate();
+                childCtrl.useButtonTextField();
             }
         });
 
         tf.setPreferredSize(new Dimension(300,25));
 
         p2.add(tf);
-        p2.add(button2);
         p2.add(bAdd);
         add(jsp);
         add(p2);
 
-        pack();
-        setSize(1024, 768);
+        validate();
+        //pack();
     }
 
     void create(String s)

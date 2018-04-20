@@ -22,6 +22,8 @@ class View extends JFrame{
 
     void showLogs(List<Log> data) {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Main Window");
+        setSize(480, 320);
 
         p.setLayout(new FlowLayout());
 
@@ -33,20 +35,19 @@ class View extends JFrame{
 
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                ctrl.useButton(button);
+                ctrl.useButton();
             }
         });
 
         p.add(button);
         add(p);
-        pack();
-        setSize(640, 480);
+
+        validate();
+        //pack();
     }
 
     void start() {
         setVisible(true);
-        button.setBackground(Color.darkGray);
-        button.setForeground(Color.red);
     }
 }
 

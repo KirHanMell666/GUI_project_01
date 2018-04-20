@@ -1,8 +1,4 @@
-import javax.swing.*;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
 import java.awt.*;
-import java.awt.event.*;
 
 class Controller {
 
@@ -15,12 +11,11 @@ class Controller {
     }
 
     void start() {
-        //logModel.dumpData();
         logView.showLogs(logModel.getData());
         logView.start();
     }
 
-    void useButton(JButton jButton)
+    void useButton()
     {
         ChildController childController = new ChildController(logModel);
         logModel.childCtrl = childController;
